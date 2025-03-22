@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { AuthProvider } from '@/lib/next-auth/auth_provider';
+import PageBackground from '@/components/PageBackground';
+import ClientHeader from '@/components/header/ClientHeader';
 
 export const metadata: Metadata = {
   title: 'Epigram',
@@ -15,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <AuthProvider>{children}</AuthProvider>
+        <PageBackground>
+          <ClientHeader />
+          <AuthProvider>{children}</AuthProvider>
+        </PageBackground>
       </body>
     </html>
   );

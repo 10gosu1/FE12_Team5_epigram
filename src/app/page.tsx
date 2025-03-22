@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import LandingHeader from '@/components/header/LandingHeader';
 
 const ScrollInMotion = {
   hidden: { opacity: 0, y: 70 },
@@ -20,7 +19,6 @@ const DampingMotion = {
 export default function Home() {
   return (
     <div className="flex flex-col bg-blue-200">
-      <LandingHeader />
       <section>
         <div className="border-line-100 relative z-1 flex h-[672px] w-full items-center justify-center border-b-[1px] bg-blue-100 bg-[repeating-linear-gradient(0deg,#ffffff_0px,#ffffff_24px,#F2F2F2_24px,#F2F2F2_25px)]">
           <div className="tablet:gap-[32px] pc:gap-[48px] flex flex-col items-center justify-center gap-[24px]">

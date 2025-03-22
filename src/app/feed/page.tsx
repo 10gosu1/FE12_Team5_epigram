@@ -2,7 +2,6 @@
 'use client';
 
 import FeedCard from '@/components/FeedCard';
-import MainHeader from '@/components/header/MainHeader';
 import Image from 'next/image';
 import { useState } from 'react';
 import EmptyState from '@/components/EmptyState';
@@ -21,7 +20,6 @@ export default function Page() {
 
   return (
     <>
-      <MainHeader />
       <main className="bg-bg-100">
         <div className="pc:pt-[120px] tablet:pb-[114px] m-auto max-w-[1240px] px-[24px] pt-[32px] pb-[56px]">
           <div className="pc:mb-[40px] mb-[24px] flex content-center justify-between">
