@@ -1,4 +1,4 @@
-import { EpigramList } from '@/types/Epigram';
+import { Epigram } from '@/types/Epigram';
 
 // 에피그램 목록 조회
 export async function getEpigramsList(
@@ -6,7 +6,7 @@ export async function getEpigramsList(
   cursor?: number,
   keyword?: string,
   writerId?: number,
-): Promise<EpigramList | null> {
+): Promise<{ list: Epigram[]; totalCount: number }> {
   try {
     const query = new URLSearchParams({
       limit: String(limit),
@@ -32,14 +32,20 @@ export async function getEpigramsList(
     }
 
     const data = await response.json();
-    return data as EpigramList;
+    return {
+      list: data.list || [],
+      totalCount: data.totalCount || 0
+    };
   } catch (error: unknown) {
     if (error instanceof Error) {
       console.error(`에피그램 목록을 불러오는 중 오류 발생: ${error.message}`);
     } else {
       console.error('에피그램 목록을 불러오는 데 실패했습니다.');
     }
-    return null;
+    return {
+      list: [],
+      totalCount: 0
+    };
   }
 }
 
