@@ -2,6 +2,7 @@
 
 import LatestCommentSection from '@/app/epigrams/_component/LatestCommentSection';
 import EpigramCommentSection from '@/app/feed/[id]/_component/EpigramCommentSection';
+import MyCommentList from '@/app/mypage/_components/MyCommentList';
 import { SessionProvider } from 'next-auth/react';
 
 export default function Jin() {
@@ -14,9 +15,12 @@ export default function Jin() {
           <LatestCommentSection />
           <br></br>
           <EpigramCommentSection
-            epigramId={1096}
-            token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTU3NywidGVhbUlkIjoiMTItNSIsInNjb3BlIjoiYWNjZXNzIiwiaWF0IjoxNzQyOTM2ODUwLCJleHAiOjE3NDI5Mzg2NTAsImlzcyI6InNwLWVwaWdyYW0ifQ.s0BjZDNdS5K_8VTwBYWrzhTG7G2vK2prfaiXbPlMAuI"
+            epigramId={1067}
+            token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTU0NywidGVhbUlkIjoiMTItNSIsInNjb3BlIjoiYWNjZXNzIiwiaWF0IjoxNzQzMDI1OTk0LCJleHAiOjE3NDMwMjc3OTQsImlzcyI6InNwLWVwaWdyYW0ifQ.aUPn33DCvlJC_A49S04cSzQ5qprul93-ROjPJypgR18"
           />
+          <br></br>
+          <h1>내 댓글 목록</h1>
+          <MyCommentList />
         </div>
       </div>
     </SessionProvider>

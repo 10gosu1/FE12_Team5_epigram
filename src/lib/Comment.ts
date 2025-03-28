@@ -1,5 +1,7 @@
 // 코멘트 API
 
+import { CommentList } from '@/types/Comment';
+
 // 댓글 작성
 export async function createComment(token: string, epigramId: number, content: string, isPrivate: boolean) {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/comments`, {
@@ -31,7 +33,8 @@ export async function getComments(token: string, limit: number, cursor: number, 
   });
 
   if (!response.ok) throw new Error('댓글 불러오기 실패');
-  return await response.json();
+  const data: CommentList = await response.json();
+  return data;
 }
 
 // 댓글 수정
